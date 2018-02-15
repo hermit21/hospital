@@ -1,0 +1,6 @@
+.plansza1{
+    display: block;
+}
+.plansza2, .plansza3{
+    display: none;
+}

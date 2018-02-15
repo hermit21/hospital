@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('build/css/base.css') }} "/>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="{{ asset('build/js/base.js') }}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row-menu">
+                <div class="logo">
+                    <img src="{{ asset('png/logo.png') }}">
+                </div>
+                <ul class="nav-menu">
+                    <li class="activ"><a href="">Home</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Register</a></li>
+                    <li><a href="">Activate Account</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+            {% block body %}{% endblock %}
+        </div>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
