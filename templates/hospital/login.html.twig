@@ -22,7 +22,7 @@
                 </div>
                 <div class="btn-form">
                     <input type="submit" name="login_pacjent" class="btn-success" value="Log in!" id="login_pacjent" />
-                    <input type="button" name="pracownik_panel" class="btn-primary" id="pracownik_panel" value="Go to Employee form"/>
+                    <input type="button" name="pracownik_panel" class="btn-primary" id="pracownik_panel" value="Login Pracownika &#10148"/>
                     <li><a href="">Back password</a></li>
                 </div>
             </form>
@@ -47,4 +47,5 @@
     </div>
 {% endblock %}
 {% block javascripts %}
+    <script src="{{ asset('build/js/login.js') }}"></script>
 {% endblock %}

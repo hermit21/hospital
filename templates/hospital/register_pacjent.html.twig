@@ -8,69 +8,61 @@
 <div class="panel">
     <div class="login-box">
         <img src="{{ asset('png/avatar_login.png') }}" class="avatar" />
-        <div class="title">Login Form</div>
+        <div class="title">Rejestracja</div>
         <hr>
-        <form action="" method="post" class="">
+        <form action="" method="post">
             <div class="plansza1">
                 <div class="forms">
-                    <label>Imie:</label>
-                    <input type="text" name="name" class="form" id="name" />
+                    <input type="text" name="name" class="form" id="name" placeholder="Imię"/>
                     <span id="nameInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Nazwisko</label>
-                    <input type="text" name="surname" class="form" id="surname" />
+                    <input type="text" name="surname" class="form" id="surname" placeholder="Nazwisko"/>
                     <span id="surnameInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Adres zamieszkania</label>
-                    <input type="text" name="address" class="form" id="address" />
+                    <input type="text" name="address" class="form" id="address" placeholder="Adres Zamieszkania"/>
                     <span id="addressInfo"></span>
                 </div>
                 <div class="btn-form">
-                    <input type="button" name="first_plansza" class="btn-success" value="Idz dalej" id="first_plansza" />
+                    <input type="button" name="first_plansza" class="btn-success" value="Dalej &#10148" id="first_plansza"/>
                 </div>
             </div>
             <div class="plansza2">
                 <div class="forms">
-                    <label>Pesel:</label>
-                    <input type="text" name="pesel" class="form" id="pesel" />
+
+                    <input type="text" name="pesel" class="form" id="pesel" placeholder="Pesel"/>
                     <span id="peselInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Numer dowodu:</label>
-                    <input type="text" name="identity_card_number" class="form" id="identity_card_number" />
+                    <input type="text" name="identity_card_number" class="form" id="identity_card_number" placeholder="Numer dowodu"/>
                     <span id="identity_card_numberInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Numer telefonu:</label>
-                    <input type="tel" name="telephon_number" class="form" id="telephon_number" />
+                    <input type="tel" name="telephon_number" class="form" id="telephon_number" placeholder="Numer telefonu"/>
                     <span id="telephon_numberInfo"></span>
                 </div>
                 <div class="btn-form">
-                    <input type="button" name="second_plansza" class="btn-success" value="Idz dalej" id="second_plansza" />
-                    <input type="button" name="first_plansza_back" class="btn-success" value="Wróć" id="first_plansza_back" />
+                    <input type="button" name="second_plansza" class="btn-success" value="Dalej &#10148" id="second_plansza" />
+                    <input type="button" name="first_plansza_back" class="btn-success" value="&#x2936 Wstecz" id="first_plansza_back" />
                 </div>
             </div>
             <div class="plansza3">
                 <div class="forms">
-                    <label>Email:</label>
                     <input type="email" name="username" class="form" id="username" />
                     <span id="peselInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Hasło:</label>
                     <input type="password" name="password" class="form" id="password" />
                     <span id="passwordInfo"></span>
                 </div>
                 <div class="forms">
-                    <label>Repeat password:</label>
                     <input type="password" name="repeat_password" class="form" id="repeat_password" />
                     <span id="repeat_passwordInfo"></span>
                 </div>
                 <div class="btn-form">
                     <input type="submit" name="register_pacjent" class="btn-success" value="Zarejestruj się" id="register_pacjent" />
-                    <input type="button" name="second_plansza_back" class="btn-success" value="Wróć" id="second_plansza_back" />
+                    <input type="button" name="second_plansza_back" class="btn-success" value="&#x21a9 Wstecz" id="second_plansza_back" />
                 </div>
             </div>
         </form>
@@ -78,4 +70,6 @@
 </div>
 {% endblock %}
 {% block javascripts %}
+    <script src="{{ asset('build/js/validate.js') }}"></script>
+    <script src="{{ asset('build/js/base.js') }}"></script>
 {% endblock %}

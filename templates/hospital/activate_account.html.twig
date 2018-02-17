@@ -1,10 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/css/token.css') }}" />
 {% endblock %}
 
 {% block body %}
-    <h3>Welcome</h3>
+    <div class="modal">
+        <div class="modal_head">
+
+        </div>
+        <div class="modal_body">
+            <div class="panel_modal1">
+                <form action="" method="post">
+                    <div class="forms">
+                        <input type="email" name="username_pacjent" class="" id="">
+                        <input type="password" name="access_token_pacjenta" class="" id="">
+                    </div>
+                    <div class="btn-form">
+                        <input type="submit" name="activate_pacjent" value="Aktywuj konto" id="" />
+                    </div>
+                </form>
+            </div>
+            <div class="panel_modal2">
+                <form action="" method="post">
+                    <div class="forms">
+                        <input type="email" name="username_pracownika" class="" id="">
+                        <input type="password" name="numer_pracownika" class="" id="">
+                        <input type="password" name="access_token_pracownika" class="" id="">
+                    </div>
+                    <div class="btn-form">
+                        <input type="submit" name="activate_pracownik" value="Aktywuj konto" id="" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 {% block javascripts %}
 {% endblock %}

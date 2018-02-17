@@ -1,3 +1,17 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+hospital:
+    path: /hospital
+    controller: App\Controller\HospitalController::index
+
+login:
+    path: /hospital/login
+    controller: App\Controller\HospitalController::login
+
+register_pacjent:
+    path: /hospital/register_pacjent
+    controller: App\Controller\HospitalController::registerPacjent
+
+register_pracownik:
+    path: /hospital/register_pracownik
+    controller: App\Controller\HospitalController::registerPracownik
+
+

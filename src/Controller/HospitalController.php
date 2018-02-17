@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Classes\Hash;
 use App\Classes\Checked;
 use App\Classes\Instances;
@@ -26,10 +27,11 @@ class HospitalController extends Controller
     /**
      * @Route("/hospital/login", name="login")
      */
-    public function login(Request $request)
+    public function login(Request $request, SessionInterface $session)
     {
         $hash_obj = new Hash();
         $em = $this->getDoctrine();
+
 
         if($request->request->get('login_pacjent')) {
             $obj_pacjent = $hash_obj->sanetizeVariables($request->request);
@@ -41,7 +43,7 @@ class HospitalController extends Controller
             if(!empty($pacjent) && ($pacjent->getPassword() == $hash_obj->makeHash($obj_pacjent->password, $pacjent->getSalt()))) {
                 $checked = new Checked();
                 if($checked->checkAccountStatus($pacjent->getAccessToken())) {
-                    $session = new Session();
+
                     $session->set('pacjent_id', $pacjent->getUsername());
 
                     return $this->redirectToRoute('panel_pacjenta');
@@ -164,7 +166,7 @@ class HospitalController extends Controller
             if(!empty($em_pacjent)) {
                 $checked = new Checked();
 
-                if(!$checked->checkAccountStatus($em_pacjent->getAccessToken()) && $checked->checkToken($em_pacjent->getAccessToken(), $pacjent_data->access_token_pracownika) ) {
+                if(!$checked->checkAccountStatus($em_pacjent->getAccessToken()) && $checked->checkToken($em_pacjent->getAccessToken(), $pacjent_data->access_token_pacjenta) ) {
 
                     $em_manager = $em->getManager();
                     $pacjenci = new Pacjenci();

@@ -1,8 +1,8 @@
 function Validate(){
 
 }
-Validate.prototype.validString = function(value, min, max) {
-    if(value.trim() > min && value.trim() < max) {
+Validate.prototype.validString = function( value, min, max) {
+    if((String(value).trim()).lenght > min && (String(value).trim()).lenght < max) {
        return !(/[\\/&;]/.test(value));
     } else {
         return false;
@@ -10,7 +10,7 @@ Validate.prototype.validString = function(value, min, max) {
 
 }
 Validate.prototype.validNumber = function(value, dlugosc) {
-    if(value.trim() == dlugosc) {
+    if((String(value).trim()).lenght == dlugosc) {
         return (/^[0-9]+$/.test(value));
     }
     else {
@@ -18,7 +18,7 @@ Validate.prototype.validNumber = function(value, dlugosc) {
     }
 }
 Validate.prototype.validEmail = function(value, min, max) {
-    if( (value.trim()).length > min && (value.trim()).length < max ) {
+    if( (String(value).trim()).length > min && (String(value).trim()).length < max ) {
         return (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value));
 
     } else {
@@ -26,7 +26,7 @@ Validate.prototype.validEmail = function(value, min, max) {
     }
 }
 Validate.prototype.validPassword = function(password, min, repeat_password) {
-    if(password.trim() > min) {
+    if( ( String(password).trim()).length > min) {
         if(password == repeat_password) {
             return true;
         } else {
@@ -37,5 +37,18 @@ Validate.prototype.validPassword = function(password, min, repeat_password) {
     }
 }
 Validate.prototype.validAddress = function(value, min, max) {
-
+    if( (String(value).trim()).length > min && (String(value).trim()).length < max ) {
+        return (/^\s*\S+(?:\s+\S+){2}/).test(value);
+    }
+    else {
+        return false;
+    }
+}
+Validate.prototype.validIdCard = function (value, dlugosc) {
+    if((String(value).trim()).lenght == dlugosc) {
+        return (/[^a-zA-Z0-9\-\/]/).test(value);
+    }
+    else {
+        return false;
+    }
 }

@@ -45,7 +45,7 @@
 }
 .login-box {
     max-width: 320px;
-    height: auto;
+    max-height: 400px;
     background: rgba(0,0,0, 0.7);
     color: #fff;
     top: calc(50% + 70px);
@@ -55,10 +55,10 @@
     box-sizing: border-box;
 }
 .avatar{
-    width: 100px;
-    height: 100px;
-    margin-top: calc(-50% + 110px );
-    margin-left: calc(50% - 50px);
+    width: 80px;
+    height: 80px;
+    margin-top: calc(-50% + 120px );
+    margin-left: calc(50% - 40px);
 }
 .title{
     font-size: 20px;
@@ -85,22 +85,14 @@ hr{
     width: 90%;
     height: 25px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #aacd4e;
     background: transparent;
     color: #fff;
     outline: 0;
     font-size: 17px;
 }
-label{
-    position: absolute;
-    pointer-events: none;
-    margin-left: 10px;
-    margin-top: -20px;
-    font-size: 17px;
-    display: block;
-    font-family: sans-serif;
-    font-style: italic;
-    transition: 0.4s;
+.form::placeholder{
+    color: #fff;
 }
 .btn-form{
     padding: 30px 60px;
@@ -141,4 +133,17 @@ label{
 }
 .panel_form_pracownicy {
     display: none;
+}
+.forms span.error::after {
+    color: red;
+    font-size: 16px;
+    font-family: "sans-serif";
+    content: '\2716';
+}
+.forms span.valid::after {
+    color: green;
+    font-size: 16px;
+    font-family: "sans-serif";
+    content: '\2713';
+    font-weight: bold;
 }
